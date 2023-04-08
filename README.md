@@ -44,8 +44,6 @@ https://blog.tugi.ch/scripts-and-tools/setup-packager-for-intune
 - **Software Packages / 7-zip** / Package (for the package file / *.intunewin)
 - **Software Packages / 7-zip** / Documentations (for documentations etc.)
 
-2. Download prerequisites
-
 3. Run the app `SetupPackager.exe` and drop your main folder to the upload icon.
 
 4. Select the installer file in the dropdown - EXE, MSI or the installer script
