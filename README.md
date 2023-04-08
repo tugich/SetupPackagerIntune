@@ -7,8 +7,11 @@
 
  This application helps you to package your setup files for Intune faster and easier with the official Win32 Content Prep Tool, without entering any commands manually in the console:
 
-![alt text](https://raw.githubusercontent.com/tugich/SetupPackagerIntune/main/Featured_Image.png)
+![Featured Image](https://raw.githubusercontent.com/tugich/SetupPackagerIntune/main/Featured_Image.png)
 
+### Screenshot
+
+![App Screenshot](https://raw.githubusercontent.com/tugich/SetupPackagerIntune/main/Screenshot.png)
 
 
 <!-- GETTING STARTED -->
