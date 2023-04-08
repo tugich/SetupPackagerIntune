@@ -20,7 +20,7 @@ Download Win32 Content Prep Tool at [https://github.com/microsoft/Microsoft-Win3
 
 ### Installation
 
-1. Download Win32 Content Prep Tool at [https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool)
+1. Download Win32 Content Prep Tool (see Prerequisites)
 2. Copy **IntuneWinAppUtil.exe** in the same folder like SetupPackager.exe - Don't change the name of the wrapper
 
 
