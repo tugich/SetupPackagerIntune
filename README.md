@@ -1,27 +1,5 @@
 # SetupPackagerIntune
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
 
 
 <!-- ABOUT THE PROJECT -->
@@ -30,8 +8,6 @@
  This application helps you to package your setup files for Intune faster and easier with the official Win32 Content Prep Tool, without entering any commands manually in the console:
 
 ![alt text](https://raw.githubusercontent.com/tugich/SetupPackagerIntune/main/Screenshot.png)
-
- *Please note that this application is currently in beta testing phase and may contain errors. The use of this application is at the sole discretion of the user. We accept no liability for any damages or malfunctions that may occur as a result of using this software.*
 
 ---
 
