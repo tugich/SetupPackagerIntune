@@ -1,5 +1,6 @@
 # SetupPackagerIntune
 
+![Featured Image](Featured_Image.png)
 
 
 <!-- ABOUT THE PROJECT -->
@@ -7,11 +8,10 @@
 
  This application helps you to package your setup files for Intune faster and easier with the official Win32 Content Prep Tool, without entering any commands manually in the console:
 
-![Featured Image](https://raw.githubusercontent.com/tugich/SetupPackagerIntune/main/Featured_Image.png)
 
 ### Screenshot
 
-![App Screenshot](https://raw.githubusercontent.com/tugich/SetupPackagerIntune/main/Screenshot.png)
+![App Screenshot](Screenshot.png)
 
 
 <!-- GETTING STARTED -->
@@ -36,19 +36,19 @@ https://blog.tugi.ch/scripts-and-tools/setup-packager-for-intune
 
 <br>
 
-1. Create the folder structure - My recommandation:
+1. Create the folder structure for app packaging - My recommandation:
 
-- Software Packages
-- **Software Packages / 7-zip** (main folder)
-- **Software Packages / 7-zip** / Installer (which contains the installer of the app, *.exe or *.msi)
-- **Software Packages / 7-zip** / Package (for the package file / *.intunewin)
-- **Software Packages / 7-zip** / Documentations (for documentations etc.)
+- **Software Packages**
+- **Software Packages / 7-zip 22.01 x64** (main folder)
+- **Software Packages / 7-zip 22.01 x64** / Installer (which contains the installer of the app, *.exe or *.msi)
+- **Software Packages / 7-zip 22.01 x64** / Package (for the package file / *.intunewin)
+- **Software Packages / 7-zip 22.01 x64** / Documentations (for documentations etc.)
 
-3. Run the app `SetupPackager.exe` and drop your main folder to the upload icon.
+2. Run the app `SetupPackager.exe` and drag & drop your installer folder (e.g. Software Packages / 7-zip 22.01 x64 / Installer) from Windows Explorer to the upload icon.
 
-4. Select the installer file in the dropdown - EXE, MSI or the installer script
+3. Select the installer file in the dropdown field - EXE, MSI or installer script
 
-5. Click on `Create Intune package`
+4. Click on `Create Intune package`
 
 
 
