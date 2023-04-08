@@ -9,7 +9,7 @@
 
 ![alt text](https://raw.githubusercontent.com/tugich/SetupPackagerIntune/main/Screenshot.png)
 
----
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -49,7 +49,7 @@ https://blog.tugi.ch/scripts-and-tools/setup-packager-for-intune
 
 5. Click on `Create Intune package`
 
----
+
 
 <!-- LICENSE -->
 ## License
