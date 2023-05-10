@@ -1,4 +1,5 @@
 Param($FilePath)
+Set-ExecutionPolicy ByPass -Scope CurrentUser
 
 Function Get-MsiDatabaseProperties2()
 {
