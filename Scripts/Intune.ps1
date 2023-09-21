@@ -14,8 +14,17 @@ Param(
 Set-ExecutionPolicy ByPass -Scope CurrentUser
 
 # Connect to Intune
-# Install-Module -Name "IntuneWin32App"
-Connect-MSIntuneGraph -TenantID $Tenant | Out-Null
+If (Get-InstalledModule "IntuneWin32App")
+{
+  Connect-MSIntuneGraph -TenantID $Tenant | Out-Null
+}
+Else
+{
+  Write-Host "IntuneWin32App module not found - please install it first." -ForegroundColor Black -BackgroundColor Yellow
+  Write-Host "https://github.com/MSEndpointMgr/IntuneWin32App"
+  # Install-Module -Name "IntuneWin32App"
+  Exit 1
+}
 
 # Get MSI meta data from .intunewin file
 $IntuneWinMetaData = Get-IntuneWin32AppMetaData -FilePath $IntuneWinFile
