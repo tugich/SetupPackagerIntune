@@ -81,11 +81,12 @@ Function Get-MsiDatabaseProperties2()
 
 try {
     $Properties = Get-MsiDatabaseProperties2 $FilePath
-    $ProductCode = $Properties.ProductCode
-    $ProductName = $Properties.ProductName
-    $Manufacturer = $Properties.Manufacturer
-    $ProductVersion = $Properties.ProductVersion
-    Write-Host $ProductCode
+    
+    Write-Host "Productmanufacturer:"$Properties.Manufacturer
+    Write-Host "Productname:"$Properties.ProductName
+    Write-Host "Productcode:"$Properties.ProductCode
+    Write-Host "Productversion:"$Properties.ProductVersion
+
     Exit 0
 } catch {
     Write-Host "MSI information extraction failed. Please check if PowerShell is allowed and if the file path is correctly defined."

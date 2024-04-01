@@ -196,7 +196,7 @@ Try {
         [String]$installPhase = 'Installation'
 
         ## <Perform Installation tasks here>
-        Execute-Process -Path "<InstallerFile>"
+        Execute-Process -Path "<InstallationPath>"
 
 
         ##*===============================================
@@ -232,7 +232,7 @@ Try {
         [String]$installPhase = 'Uninstallation'
 		
         ## <Perform Uninstallation tasks here>
-        Execute-Process -Path ""
+        Execute-Process -Path "<UninstallationPath>"
 
 
         ##*===============================================

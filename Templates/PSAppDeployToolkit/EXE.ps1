@@ -182,7 +182,7 @@ Try {
         [String]$installPhase = 'Pre-Installation'
 
         ## Show Welcome Message, close Internet Explorer if required, allow up to 3 deferrals, verify there is enough disk space to complete the install, and persist the prompt
-        Show-InstallationWelcome -CloseApps 'iexplore' -AllowDefer -DeferTimes 3 -CheckDiskSpace -PersistPrompt
+        Show-InstallationWelcome -CloseApps '<CloseApps>' -AllowDefer -DeferTimes 3 -CheckDiskSpace -PersistPrompt
 
         ## Show Progress Message (with the default message)
         Show-InstallationProgress
@@ -196,7 +196,7 @@ Try {
         [String]$installPhase = 'Installation'
 
         ## <Perform Installation tasks here>
-        Execute-Process -Path "<InstallerFile>"
+        Execute-Process -Path "<InstallationPath>" -Parameter "<InstallationParameter>"
 
 
         ##*===============================================
@@ -218,7 +218,7 @@ Try {
         [String]$installPhase = 'Pre-Uninstallation'
 
         ## Show Welcome Message, close Internet Explorer with a 60 second countdown before automatically closing
-        Show-InstallationWelcome -CloseApps 'iexplore' -CloseAppsCountdown 60
+        Show-InstallationWelcome -CloseApps '<CloseApps>' -CloseAppsCountdown 60
 
         ## Show Progress Message (with the default message)
         Show-InstallationProgress
@@ -232,7 +232,7 @@ Try {
         [String]$installPhase = 'Uninstallation'
 		
         ## <Perform Uninstallation tasks here>
-        Execute-Process -Path ""
+        Execute-Process -Path "<UninstallationPath>" -Parameter "<UninstallationParameter>"
 
 
         ##*===============================================
@@ -251,7 +251,7 @@ Try {
         [String]$installPhase = 'Pre-Repair'
 
         ## Show Welcome Message, close Internet Explorer with a 60 second countdown before automatically closing
-        Show-InstallationWelcome -CloseApps 'iexplore' -CloseAppsCountdown 60
+        Show-InstallationWelcome -CloseApps '<CloseApps>' -CloseAppsCountdown 60
 
         ## Show Progress Message (with the default message)
         Show-InstallationProgress

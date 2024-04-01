@@ -1,0 +1,8 @@
+[General]
+Publisher=7-Zip
+Productname=7-Zip
+Version=23.04
+InstallationParameter=/S
+UninstallationPath=C:\Program Files\7-Zip\Uninstall.exe
+UninstallationParameter=/S
+CloseApps=7z,7zFM,7zG,Uninstall
