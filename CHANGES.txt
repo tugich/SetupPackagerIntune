@@ -1,0 +1,38 @@
+Version 1.5.3:
+* Open source the project for the community
+* Batch and PowerShell scripts renamed for new naming convention
+* Added [Enter] shortcut to search for installed applications
+
+Version 1.5.2:
+* Added search window for installed Windows apps
+* Fixed issue with PSADT generator for MSI installers (app crash)
+
+Version 1.5.1:
+* Added PSAppDeployToolkit (PSADT) project generator - Thanks to: https://psappdeploytoolkit.com
+* Added PSAppDeployToolkit (PSADT) debugger window
+* Added MSI details dialog - Extraction of details from an MSI file (publisher, productname, version, productcode)
+* Added About dialog
+* Added threadsafe & multi-threading support for some application tasks
+* Fixed window event handling (WinAPI)
+* Improved application start
+
+Version 1.4.0:
+* Added PowerShell Module detection for IntuneWin32App in Intune.ps1
+
+Version 1.3.0:
+* Added automatic download for IntuneWinAppUtil (from GitHub)
+* Added Intune direct upload as new feature (only for packages with MSI installer)
+* Fixed issue with selecting folder by the clicking on the folder icon
+
+Version 1.2.0:
+* Fixed issue with MSI productcode extraction
+* Fixed folder selection (not over drag & drop)
+
+Version 1.1.0:
+* Added "Commands for Intune"
+* Added action for PEiD informations
+* Added actions for silent switch, icon & description search
+* Fixed issue with existing packages
+
+Version 1.0.0:
+(First release)
