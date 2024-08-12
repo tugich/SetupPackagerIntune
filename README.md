@@ -44,7 +44,7 @@ https://blog.tugi.ch/scripts-and-tools/setup-packager-for-intune
 
 <!-- LICENSE -->
 ## License
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+See `LICENSE.txt` for more information.
 
 
 
