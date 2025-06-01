@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="20.5" version="21.5.1" Modules="simple" RootPath="." Language="en" Id="{4D86BBCB-0AB7-47C8-8054-1FE2B40B97D0}">
-  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
-    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
-  </COMPONENT>
+<DOCUMENT Type="Advanced Installer" CreateVersion="20.5" version="22.7" Modules="simple" RootPath="." Language="en" Id="{4D86BBCB-0AB7-47C8-8054-1FE2B40B97D0}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_APP_FILE" Value="[#SetupPackager.exe]"/>
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
@@ -16,10 +13,10 @@
     <ROW Property="ARPURLINFOABOUT" Value="https://blog.tugi.ch/setup-packager-intune"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="TUGI"/>
-    <ROW Property="ProductCode" Value="1033:{D05A1A9E-66E2-452E-9218-087558CF41A9} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{C6965E8A-C5C6-4F45-8998-5D2DCFC3C9EB} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Setup Packager for Intune"/>
-    <ROW Property="ProductVersion" Value="1.5.2" Options="32"/>
+    <ROW Property="ProductVersion" Value="1.6.0" Options="32"/>
     <ROW Property="REBOOT" MultiBuildValue="DefaultBuild:ReallySuppress"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
@@ -36,38 +33,180 @@
     <ROW Property="WindowsTypeNT60Display" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="AMD64_Dir" Directory_Parent="bin_Dir" DefaultDir="AMD64"/>
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
-    <ROW Directory="AppDeployToolkit_Dir" Directory_Parent="PSAppDeployToolkit_Dir" DefaultDir="APPDEP~1|AppDeployToolkit"/>
+    <ROW Directory="ARM64_Dir" Directory_Parent="bin_Dir" DefaultDir="ARM64"/>
+    <ROW Directory="AppDeployToolkit_Dir" Directory_Parent="v3_Dir" DefaultDir="APPDEP~1|AppDeployToolkit"/>
+    <ROW Directory="Assets_1_Dir" Directory_Parent="PSAppDeployToolkit_2_Dir" DefaultDir="Assets"/>
+    <ROW Directory="Assets_Dir" Directory_Parent="PSAppDeployToolkit_Dir" DefaultDir="Assets"/>
+    <ROW Directory="Config_1_Dir" Directory_Parent="PSAppDeployToolkit_2_Dir" DefaultDir="Config"/>
+    <ROW Directory="Config_Dir" Directory_Parent="PSAppDeployToolkit_Dir" DefaultDir="Config"/>
     <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="Examples_Dir" Directory_Parent="APPDIR" DefaultDir="Examples"/>
     <ROW Directory="Files_Dir" Directory_Parent="PSAppDeployToolkit_Dir" DefaultDir="Files"/>
+    <ROW Directory="Frontend_Dir" Directory_Parent="PSAppDeployToolkit_2_Dir" DefaultDir="Frontend"/>
     <ROW Directory="PEiD_Dir" Directory_Parent="ThirdParty_Dir" DefaultDir="PEiD"/>
+    <ROW Directory="PSAppDeployToolkit.Extensions_1_Dir" Directory_Parent="PSAppDeployToolkit_Dir" DefaultDir="PSAPPD~1.EXT|PSAppDeployToolkit.Extensions"/>
+    <ROW Directory="PSAppDeployToolkit.Extensions_Dir" Directory_Parent="v4_Dir" DefaultDir="PSAPPD~1.EXT|PSAppDeployToolkit.Extensions"/>
     <ROW Directory="PSAppDeployToolkit_1_Dir" Directory_Parent="Templates_Dir" DefaultDir="PSAPPD~1|PSAppDeployToolkit"/>
+    <ROW Directory="PSAppDeployToolkit_2_Dir" Directory_Parent="PSAppDeployToolkit_Dir" DefaultDir="PSAPPD~1|PSAppDeployToolkit"/>
     <ROW Directory="PSAppDeployToolkit_Dir" Directory_Parent="ThirdParty_Dir" DefaultDir="PSAPPD~1|PSAppDeployToolkit"/>
     <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramMenuFolder" IsPseudoRoot="1"/>
     <ROW Directory="Scripts_Dir" Directory_Parent="APPDIR" DefaultDir="Scripts"/>
+    <ROW Directory="Strings_1_Dir" Directory_Parent="PSAppDeployToolkit_Dir" DefaultDir="Strings"/>
+    <ROW Directory="Strings_Dir" Directory_Parent="PSAppDeployToolkit_2_Dir" DefaultDir="Strings"/>
     <ROW Directory="SupportFiles_Dir" Directory_Parent="PSAppDeployToolkit_Dir" DefaultDir="SUPPOR~1|SupportFiles"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="Templates_1_Dir" Directory_Parent="PSAppDeployToolkit_2_Dir" DefaultDir="TEMPLA~1|Templates"/>
     <ROW Directory="Templates_Dir" Directory_Parent="APPDIR" DefaultDir="TEMPLA~1|Templates"/>
     <ROW Directory="ThirdParty_Dir" Directory_Parent="APPDIR" DefaultDir="THIRDP~1|ThirdParty"/>
-    <ROW Directory="vscode_Dir" Directory_Parent="PSAppDeployToolkit_Dir" DefaultDir="VSCODE~1|.vscode"/>
+    <ROW Directory="ar_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="ar"/>
+    <ROW Directory="ar_Dir" Directory_Parent="Strings_Dir" DefaultDir="ar"/>
+    <ROW Directory="bin_Dir" Directory_Parent="PSAppDeployToolkit_2_Dir" DefaultDir="bin"/>
+    <ROW Directory="cz_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="cz"/>
+    <ROW Directory="cz_Dir" Directory_Parent="Strings_Dir" DefaultDir="cz"/>
+    <ROW Directory="da_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="da"/>
+    <ROW Directory="da_Dir" Directory_Parent="Strings_Dir" DefaultDir="da"/>
+    <ROW Directory="de_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="de"/>
+    <ROW Directory="de_Dir" Directory_Parent="Strings_Dir" DefaultDir="de"/>
+    <ROW Directory="el_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="el"/>
+    <ROW Directory="el_Dir" Directory_Parent="Strings_Dir" DefaultDir="el"/>
+    <ROW Directory="es_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="es"/>
+    <ROW Directory="es_Dir" Directory_Parent="Strings_Dir" DefaultDir="es"/>
+    <ROW Directory="fi_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="fi"/>
+    <ROW Directory="fi_Dir" Directory_Parent="Strings_Dir" DefaultDir="fi"/>
+    <ROW Directory="fr_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="fr"/>
+    <ROW Directory="fr_Dir" Directory_Parent="Strings_Dir" DefaultDir="fr"/>
+    <ROW Directory="handle_1_Dir" Directory_Parent="ARM64_Dir" DefaultDir="handle"/>
+    <ROW Directory="handle_2_Dir" Directory_Parent="i386_Dir" DefaultDir="handle"/>
+    <ROW Directory="handle_Dir" Directory_Parent="AMD64_Dir" DefaultDir="handle"/>
+    <ROW Directory="he_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="he"/>
+    <ROW Directory="he_Dir" Directory_Parent="Strings_Dir" DefaultDir="he"/>
+    <ROW Directory="hu_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="hu"/>
+    <ROW Directory="hu_Dir" Directory_Parent="Strings_Dir" DefaultDir="hu"/>
+    <ROW Directory="i386_Dir" Directory_Parent="bin_Dir" DefaultDir="i386"/>
+    <ROW Directory="it_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="it"/>
+    <ROW Directory="it_Dir" Directory_Parent="Strings_Dir" DefaultDir="it"/>
+    <ROW Directory="ja_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="ja"/>
+    <ROW Directory="ja_Dir" Directory_Parent="Strings_Dir" DefaultDir="ja"/>
+    <ROW Directory="ko_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="ko"/>
+    <ROW Directory="ko_Dir" Directory_Parent="Strings_Dir" DefaultDir="ko"/>
+    <ROW Directory="lib_Dir" Directory_Parent="PSAppDeployToolkit_2_Dir" DefaultDir="lib"/>
+    <ROW Directory="nb_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="nb"/>
+    <ROW Directory="nb_Dir" Directory_Parent="Strings_Dir" DefaultDir="nb"/>
+    <ROW Directory="nl_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="nl"/>
+    <ROW Directory="nl_Dir" Directory_Parent="Strings_Dir" DefaultDir="nl"/>
+    <ROW Directory="pl_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="pl"/>
+    <ROW Directory="pl_Dir" Directory_Parent="Strings_Dir" DefaultDir="pl"/>
+    <ROW Directory="pt_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="pt"/>
+    <ROW Directory="pt_Dir" Directory_Parent="Strings_Dir" DefaultDir="pt"/>
+    <ROW Directory="ptbr_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="pt-br"/>
+    <ROW Directory="ptbr_Dir" Directory_Parent="Strings_Dir" DefaultDir="pt-br"/>
+    <ROW Directory="ru_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="ru"/>
+    <ROW Directory="ru_Dir" Directory_Parent="Strings_Dir" DefaultDir="ru"/>
+    <ROW Directory="sk_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="sk"/>
+    <ROW Directory="sk_Dir" Directory_Parent="Strings_Dir" DefaultDir="sk"/>
+    <ROW Directory="sv_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="sv"/>
+    <ROW Directory="sv_Dir" Directory_Parent="Strings_Dir" DefaultDir="sv"/>
+    <ROW Directory="tr_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="tr"/>
+    <ROW Directory="tr_Dir" Directory_Parent="Strings_Dir" DefaultDir="tr"/>
+    <ROW Directory="v3_Dir" Directory_Parent="Frontend_Dir" DefaultDir="v3"/>
+    <ROW Directory="v4_Dir" Directory_Parent="Frontend_Dir" DefaultDir="v4"/>
+    <ROW Directory="zhhans_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="zh-hans"/>
+    <ROW Directory="zhhans_Dir" Directory_Parent="Strings_Dir" DefaultDir="zh-hans"/>
+    <ROW Directory="zhhant_1_Dir" Directory_Parent="Strings_1_Dir" DefaultDir="zh-hant"/>
+    <ROW Directory="zhhant_Dir" Directory_Parent="Strings_Dir" DefaultDir="zh-hant"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{A769A144-D61C-4083-BDB2-D01086097D97}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="AppDeployToolkitBanner.png" ComponentId="{05F2F4B3-DFB1-40FD-A6F4-4067EF0CE212}" Directory_="AppDeployToolkit_Dir" Attributes="0" KeyPath="AppDeployToolkitBanner.png" Type="0"/>
-    <ROW Component="Custom.ps1" ComponentId="{FD17BEAF-6809-4E16-8F1D-19FE58F85569}" Directory_="PSAppDeployToolkit_1_Dir" Attributes="0" KeyPath="Batch.ps1" Type="0"/>
-    <ROW Component="DeployApplication.exe" ComponentId="{557123B0-3FE6-46C4-BC4A-A2CFAD94ED63}" Directory_="PSAppDeployToolkit_Dir" Attributes="0" KeyPath="DeployApplication.exe"/>
-    <ROW Component="DeployApplication.exe.config" ComponentId="{B570EBBB-DC0E-4AA8-B924-ABFF112C7A76}" Directory_="PSAppDeployToolkit_Dir" Attributes="0" KeyPath="DeployApplication.exe.config" Type="0"/>
-    <ROW Component="Files" ComponentId="{FBD0B254-51DE-4C69-B7BA-55B870B5CB0F}" Directory_="Files_Dir" Attributes="0"/>
+    <ROW Component="AddSetupFilesHere.txt" ComponentId="{C2607926-C4D4-4D9D-9592-9CF83B58CBFC}" Directory_="Files_Dir" Attributes="0" KeyPath="AddSetupFilesHere.txt" Type="0"/>
+    <ROW Component="AddSupportingFilesHere.txt" ComponentId="{4F4298A3-4656-4999-81F3-31A3D1CCDB70}" Directory_="SupportFiles_Dir" Attributes="0" KeyPath="AddSupportingFilesHere.txt" Type="0"/>
+    <ROW Component="AppDeployToolkitExtensions.ps1" ComponentId="{42EAA279-C92F-46C9-A976-68B00551E015}" Directory_="AppDeployToolkit_Dir" Attributes="0" KeyPath="AppDeployToolkitExtensions.ps1" Type="0"/>
+    <ROW Component="AppIcon.png" ComponentId="{D677B6BE-2D37-4EB8-815F-03B4952CC251}" Directory_="Assets_Dir" Attributes="0" KeyPath="AppIcon.png" Type="0"/>
+    <ROW Component="AppIcon.png_1" ComponentId="{91AEE01D-406F-4FA0-B46D-B3596CAC07B5}" Directory_="Assets_1_Dir" Attributes="0" KeyPath="AppIcon.png_1" Type="0"/>
+    <ROW Component="COPYING.Lesser" ComponentId="{D786A162-37C8-42CE-A2FF-15B09D5E4EDD}" Directory_="PSAppDeployToolkit_Dir" Attributes="0" KeyPath="COPYING.Lesser" Type="0"/>
+    <ROW Component="COPYING.Lesser_1" ComponentId="{EF31B94A-531C-4BA0-A317-723C5BB65496}" Directory_="PSAppDeployToolkit_2_Dir" Attributes="0" KeyPath="COPYING.Lesser_1" Type="0"/>
+    <ROW Component="COPYING.Lesser_2" ComponentId="{0B333F18-83CF-4C66-9840-D8DAD8D8F4D4}" Directory_="v3_Dir" Attributes="0" KeyPath="COPYING.Lesser_3" Type="0"/>
+    <ROW Component="COPYING.Lesser_3" ComponentId="{82754A43-D0DE-4D5E-AD1B-BA8F0F5F419E}" Directory_="v4_Dir" Attributes="0" KeyPath="COPYING.Lesser_4" Type="0"/>
+    <ROW Component="COPYING.Lesser_4" ComponentId="{2F54FBE5-BC3E-4594-90F2-3ABF1CE703C0}" Directory_="PSAppDeployToolkit.Extensions_Dir" Attributes="0" KeyPath="COPYING.Lesser_5" Type="0"/>
+    <ROW Component="COPYING.Lesser_5" ComponentId="{C8396111-3FD2-46CF-B39C-CB056F39CACD}" Directory_="PSAppDeployToolkit.Extensions_1_Dir" Attributes="0" KeyPath="COPYING.Lesser_6" Type="0"/>
+    <ROW Component="Custom.ps1" ComponentId="{FD17BEAF-6809-4E16-8F1D-19FE58F85569}" Directory_="PSAppDeployToolkit_1_Dir" Attributes="0" KeyPath="EXE.ps1" Type="0"/>
+    <ROW Component="DeployApplication.exe" ComponentId="{04A10623-E9DF-4003-A1A1-3457026A5EC4}" Directory_="v3_Dir" Attributes="0" KeyPath="DeployApplication.exe"/>
+    <ROW Component="Eula.txt" ComponentId="{150C66C4-0216-4DFA-BBA6-D2B63CE8C651}" Directory_="handle_Dir" Attributes="0" KeyPath="Eula.txt" Type="0"/>
+    <ROW Component="Eula.txt_1" ComponentId="{F346E7D5-8422-4F8E-927F-EE55A9F345E3}" Directory_="handle_1_Dir" Attributes="0" KeyPath="Eula.txt_1" Type="0"/>
+    <ROW Component="Eula.txt_2" ComponentId="{151E370F-B9D4-4D3C-9B7D-04B4570B049E}" Directory_="handle_2_Dir" Attributes="0" KeyPath="Eula.txt_2" Type="0"/>
     <ROW Component="Icon.ico" ComponentId="{467A0AB6-9E4D-44C4-B686-5F7AD6284AA2}" Directory_="APPDIR" Attributes="0" KeyPath="Icon.ico" Type="0"/>
-    <ROW Component="Msi.ps1" ComponentId="{8E7DD6B2-2533-4972-B42E-05FCD05C9B77}" Directory_="Scripts_Dir" Attributes="0" KeyPath="Msi.ps1" Type="0"/>
-    <ROW Component="PEiD.exe" ComponentId="{52308F43-22C3-4B34-959A-4A54B22216CC}" Directory_="PEiD_Dir" Attributes="0" KeyPath="PEiD.exe"/>
-    <ROW Component="PEiD.txt" ComponentId="{7AD42E34-A68B-49E5-BF5C-64C2EB6ACC21}" Directory_="PEiD_Dir" Attributes="0" KeyPath="PEiD.txt" Type="0"/>
+    <ROW Component="InvokeAppDeployToolkit.exe" ComponentId="{D8BE4177-E6AE-4415-B3B9-774749E6D9D1}" Directory_="PSAppDeployToolkit_Dir" Attributes="0" KeyPath="InvokeAppDeployToolkit.exe"/>
+    <ROW Component="InvokeAppDeployToolkit.exe_1" ComponentId="{BB89C077-AA37-4E0B-9967-6E8E2A5AF69A}" Directory_="v4_Dir" Attributes="0" KeyPath="InvokeAppDeployToolkit.exe_1"/>
+    <ROW Component="Msi.ps1" ComponentId="{8E7DD6B2-2533-4972-B42E-05FCD05C9B77}" Directory_="Scripts_Dir" Attributes="0" KeyPath="WindowsVersions.txt" Type="0"/>
+    <ROW Component="NewADTFunction.ps1" ComponentId="{0D232755-1B9B-441F-B642-FC8281B1CD6B}" Directory_="Templates_1_Dir" Attributes="0" KeyPath="NewADTFunction.ps1" Type="0"/>
+    <ROW Component="PEiD.exe" ComponentId="{3F8AE9A6-CC4D-474E-A2F4-C55BDC53F5F7}" Directory_="PEiD_Dir" Attributes="0" KeyPath="PEiD.exe"/>
+    <ROW Component="PEiD.txt" ComponentId="{829F3C9A-9E8D-48B4-931B-068068DBE902}" Directory_="PEiD_Dir" Attributes="0" KeyPath="PEiD.txt" Type="0"/>
+    <ROW Component="PSADT.UserInterface.dll" ComponentId="{EEDFA775-3D32-4911-A27A-E08B68D9D242}" Directory_="lib_Dir" Attributes="0" KeyPath="PSADT.UserInterface.dll"/>
+    <ROW Component="PSADT.dll" ComponentId="{4B0795C6-6A17-4AA6-B995-41E7F5F45E2D}" Directory_="lib_Dir" Attributes="0" KeyPath="PSADT.dll"/>
     <ROW Component="PSADT.setuppackager" ComponentId="{0958A60A-7F82-4C24-8AB1-802A494F4EAB}" Directory_="Examples_Dir" Attributes="0" KeyPath="PSADT.setuppackager" Type="0"/>
     <ROW Component="ProductInformation" ComponentId="{65EA0F7B-BA09-40DC-BC18-AD35EAE7016A}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="SetupPackager.exe" ComponentId="{F98D4F07-8FC8-4616-96D9-AEA7928DB7A9}" Directory_="APPDIR" Attributes="256" KeyPath="SetupPackager.exe"/>
-    <ROW Component="SupportFiles" ComponentId="{6E4EA26A-5E9A-438D-A63D-A8E84B2E21B7}" Directory_="SupportFiles_Dir" Attributes="0"/>
-    <ROW Component="extensions.json" ComponentId="{CCEE4911-1604-438E-BF97-C9E917FDE063}" Directory_="vscode_Dir" Attributes="0" KeyPath="extensions.json" Type="0"/>
+    <ROW Component="System.ValueTuple.dll" ComponentId="{40ACCD1D-A095-4782-997E-62D893F413D1}" Directory_="lib_Dir" Attributes="0" KeyPath="System.ValueTuple.dll"/>
+    <ROW Component="Wpf.Ui.Abstractions.dll" ComponentId="{41633EEF-D471-406A-A558-4E8222B109BB}" Directory_="lib_Dir" Attributes="0" KeyPath="Wpf.Ui.Abstractions.dll"/>
+    <ROW Component="Wpf.Ui.Abstractions.xml" ComponentId="{DE491BEB-5C95-476D-9FE0-F101A0F47CF4}" Directory_="lib_Dir" Attributes="0" KeyPath="Wpf.Ui.Abstractions.xml" Type="0"/>
+    <ROW Component="Wpf.Ui.Tray.dll" ComponentId="{E51564DD-C1A3-4BE3-BC78-8C4827DF999E}" Directory_="lib_Dir" Attributes="0" KeyPath="Wpf.Ui.Tray.dll"/>
+    <ROW Component="Wpf.Ui.dll" ComponentId="{E2BE1820-A64B-49CC-A96E-A9E7C11A47C4}" Directory_="lib_Dir" Attributes="0" KeyPath="Wpf.Ui.dll"/>
+    <ROW Component="config.psd1" ComponentId="{84E00C8C-D284-424A-80E0-3A0CA52B79C3}" Directory_="Config_Dir" Attributes="0" KeyPath="config.psd1" Type="0"/>
+    <ROW Component="config.psd1_1" ComponentId="{0A4910BB-68B5-4962-96B9-E76F480EB016}" Directory_="Config_1_Dir" Attributes="0" KeyPath="config.psd1_1" Type="0"/>
+    <ROW Component="handle.exe" ComponentId="{983E4C94-1841-4D81-9B24-CE39A312ACF9}" Directory_="handle_Dir" Attributes="256" KeyPath="handle.exe"/>
+    <ROW Component="handle.exe_1" ComponentId="{2E5DFFF4-13B8-48E6-8B6D-6ECF4C6EE80A}" Directory_="handle_1_Dir" Attributes="256" KeyPath="handle.exe_1"/>
+    <ROW Component="handle.exe_2" ComponentId="{AD8C036A-8335-4868-B659-4A206B5F187E}" Directory_="handle_2_Dir" Attributes="0" KeyPath="handle.exe_2"/>
+    <ROW Component="strings.psd1" ComponentId="{99C31B44-06D8-4B14-8C12-5E8E91A0322E}" Directory_="ar_Dir" Attributes="0" KeyPath="strings.psd1" Type="0"/>
+    <ROW Component="strings.psd1_1" ComponentId="{51FFEFB9-33B6-4139-B8D6-AB45F20BBCEE}" Directory_="cz_Dir" Attributes="0" KeyPath="strings.psd1_1" Type="0"/>
+    <ROW Component="strings.psd1_10" ComponentId="{4D72D2E4-8AEA-4F4B-B8E5-7C0693A86E94}" Directory_="it_Dir" Attributes="0" KeyPath="strings.psd1_10" Type="0"/>
+    <ROW Component="strings.psd1_11" ComponentId="{EF97FF07-D8DE-4C47-B4C1-685BEBF35ECB}" Directory_="ja_Dir" Attributes="0" KeyPath="strings.psd1_11" Type="0"/>
+    <ROW Component="strings.psd1_12" ComponentId="{D47E824D-83DF-48F0-9AC7-818283B21265}" Directory_="ko_Dir" Attributes="0" KeyPath="strings.psd1_12" Type="0"/>
+    <ROW Component="strings.psd1_13" ComponentId="{3FC41360-4973-4ABA-875B-7C3B04497DA2}" Directory_="nb_Dir" Attributes="0" KeyPath="strings.psd1_13" Type="0"/>
+    <ROW Component="strings.psd1_14" ComponentId="{7F29DA61-A5F8-4A82-A1ED-94F0E30EEC6D}" Directory_="nl_Dir" Attributes="0" KeyPath="strings.psd1_14" Type="0"/>
+    <ROW Component="strings.psd1_15" ComponentId="{581C9291-8D51-48A7-8418-1000DD332F2C}" Directory_="pl_Dir" Attributes="0" KeyPath="strings.psd1_15" Type="0"/>
+    <ROW Component="strings.psd1_16" ComponentId="{B019A64A-1372-4BF0-8A24-77A7C9FD751D}" Directory_="pt_Dir" Attributes="0" KeyPath="strings.psd1_16" Type="0"/>
+    <ROW Component="strings.psd1_17" ComponentId="{0557BDEC-6AC3-439D-9517-8FADDC1D10C5}" Directory_="ptbr_Dir" Attributes="0" KeyPath="strings.psd1_17" Type="0"/>
+    <ROW Component="strings.psd1_18" ComponentId="{4FF823BB-E1C3-4963-9210-393FB15DD415}" Directory_="ru_Dir" Attributes="0" KeyPath="strings.psd1_18" Type="0"/>
+    <ROW Component="strings.psd1_19" ComponentId="{2499730B-DBB5-48B0-86C4-5B7C641F4C4C}" Directory_="sk_Dir" Attributes="0" KeyPath="strings.psd1_19" Type="0"/>
+    <ROW Component="strings.psd1_2" ComponentId="{67D3349D-CA6A-4725-8707-09F3B78159B9}" Directory_="da_Dir" Attributes="0" KeyPath="strings.psd1_2" Type="0"/>
+    <ROW Component="strings.psd1_20" ComponentId="{C7156037-B69B-408A-BC8F-6495E81FCA6D}" Directory_="Strings_Dir" Attributes="0" KeyPath="strings.psd1_20" Type="0"/>
+    <ROW Component="strings.psd1_21" ComponentId="{9C1B661D-3486-4EA2-AF0B-D44C90D29988}" Directory_="sv_Dir" Attributes="0" KeyPath="strings.psd1_21" Type="0"/>
+    <ROW Component="strings.psd1_22" ComponentId="{8C47B073-FDF5-4659-BC78-5F13DBC21E57}" Directory_="tr_Dir" Attributes="0" KeyPath="strings.psd1_22" Type="0"/>
+    <ROW Component="strings.psd1_23" ComponentId="{5A392E8C-4A35-4D99-A6FD-DF6E0CF0A0FD}" Directory_="zhhans_Dir" Attributes="0" KeyPath="strings.psd1_23" Type="0"/>
+    <ROW Component="strings.psd1_24" ComponentId="{BC7C742E-7327-4509-9318-FD1473005BCE}" Directory_="zhhant_Dir" Attributes="0" KeyPath="strings.psd1_24" Type="0"/>
+    <ROW Component="strings.psd1_25" ComponentId="{448B9DAF-9E71-4A2F-B793-8B7A7187BDE6}" Directory_="ar_1_Dir" Attributes="0" KeyPath="strings.psd1_25" Type="0"/>
+    <ROW Component="strings.psd1_26" ComponentId="{7E570852-C15D-4FB6-8F9A-BC442EB074CD}" Directory_="cz_1_Dir" Attributes="0" KeyPath="strings.psd1_26" Type="0"/>
+    <ROW Component="strings.psd1_27" ComponentId="{2ECCCDE3-78A2-4E9E-A011-82321A812AED}" Directory_="da_1_Dir" Attributes="0" KeyPath="strings.psd1_27" Type="0"/>
+    <ROW Component="strings.psd1_28" ComponentId="{9ED93E73-3259-43E6-B552-94469819E1B6}" Directory_="de_1_Dir" Attributes="0" KeyPath="strings.psd1_28" Type="0"/>
+    <ROW Component="strings.psd1_29" ComponentId="{DD322A0C-A104-4A1F-A324-8C633575E0A4}" Directory_="el_1_Dir" Attributes="0" KeyPath="strings.psd1_29" Type="0"/>
+    <ROW Component="strings.psd1_3" ComponentId="{6195457D-F332-4AC5-ADE6-336315B1B65A}" Directory_="de_Dir" Attributes="0" KeyPath="strings.psd1_3" Type="0"/>
+    <ROW Component="strings.psd1_30" ComponentId="{B5EB9F5B-3EC3-4D0B-88F0-D6CEDB436ADD}" Directory_="es_1_Dir" Attributes="0" KeyPath="strings.psd1_30" Type="0"/>
+    <ROW Component="strings.psd1_31" ComponentId="{33D67668-AAE5-4483-A750-9407DB8D22A0}" Directory_="fi_1_Dir" Attributes="0" KeyPath="strings.psd1_31" Type="0"/>
+    <ROW Component="strings.psd1_32" ComponentId="{2689BD81-8429-483A-AA32-84B4A9BC0264}" Directory_="fr_1_Dir" Attributes="0" KeyPath="strings.psd1_32" Type="0"/>
+    <ROW Component="strings.psd1_33" ComponentId="{E1BCD73A-B6D8-463C-92D9-C884E9D9F4B6}" Directory_="he_1_Dir" Attributes="0" KeyPath="strings.psd1_33" Type="0"/>
+    <ROW Component="strings.psd1_34" ComponentId="{18663760-BD54-4E6E-B4A3-11805DD758B3}" Directory_="hu_1_Dir" Attributes="0" KeyPath="strings.psd1_34" Type="0"/>
+    <ROW Component="strings.psd1_35" ComponentId="{59C4497B-7477-41E8-8CF7-BC69BAB56BAF}" Directory_="it_1_Dir" Attributes="0" KeyPath="strings.psd1_35" Type="0"/>
+    <ROW Component="strings.psd1_36" ComponentId="{1BAB3914-55A7-4000-9462-DCC4C2AA7D1C}" Directory_="ja_1_Dir" Attributes="0" KeyPath="strings.psd1_36" Type="0"/>
+    <ROW Component="strings.psd1_37" ComponentId="{D5088A98-7C70-4409-8FBE-22026DF1F352}" Directory_="ko_1_Dir" Attributes="0" KeyPath="strings.psd1_37" Type="0"/>
+    <ROW Component="strings.psd1_38" ComponentId="{034C4747-D534-4A1D-BEC4-0F72F21FC5F2}" Directory_="nb_1_Dir" Attributes="0" KeyPath="strings.psd1_38" Type="0"/>
+    <ROW Component="strings.psd1_39" ComponentId="{801EF601-D73D-4645-86AE-8AB5774F9D95}" Directory_="nl_1_Dir" Attributes="0" KeyPath="strings.psd1_39" Type="0"/>
+    <ROW Component="strings.psd1_4" ComponentId="{7DAB6C4C-0B9D-4C26-8773-DB0EA95AB837}" Directory_="el_Dir" Attributes="0" KeyPath="strings.psd1_4" Type="0"/>
+    <ROW Component="strings.psd1_40" ComponentId="{5BB8B926-036A-4541-98F5-875BDB663A16}" Directory_="pl_1_Dir" Attributes="0" KeyPath="strings.psd1_40" Type="0"/>
+    <ROW Component="strings.psd1_41" ComponentId="{A6700613-7A07-4DBE-B1C0-14B9014C4FE8}" Directory_="pt_1_Dir" Attributes="0" KeyPath="strings.psd1_41" Type="0"/>
+    <ROW Component="strings.psd1_42" ComponentId="{0C06D821-DCFD-4D7A-A227-885259130249}" Directory_="ptbr_1_Dir" Attributes="0" KeyPath="strings.psd1_42" Type="0"/>
+    <ROW Component="strings.psd1_43" ComponentId="{9DD616A8-9E40-47E2-AFB9-DD3849DEE152}" Directory_="ru_1_Dir" Attributes="0" KeyPath="strings.psd1_43" Type="0"/>
+    <ROW Component="strings.psd1_44" ComponentId="{835259B3-010C-4C06-BCEE-27E35505710D}" Directory_="sk_1_Dir" Attributes="0" KeyPath="strings.psd1_44" Type="0"/>
+    <ROW Component="strings.psd1_45" ComponentId="{43E32162-E707-4373-828A-29A7455C7E30}" Directory_="Strings_1_Dir" Attributes="0" KeyPath="strings.psd1_45" Type="0"/>
+    <ROW Component="strings.psd1_46" ComponentId="{25E7A0F5-5587-423E-B067-F4D5B13D646B}" Directory_="sv_1_Dir" Attributes="0" KeyPath="strings.psd1_46" Type="0"/>
+    <ROW Component="strings.psd1_47" ComponentId="{0F8619D5-3BBD-42F6-A690-FEAC3C0F42BC}" Directory_="tr_1_Dir" Attributes="0" KeyPath="strings.psd1_47" Type="0"/>
+    <ROW Component="strings.psd1_48" ComponentId="{598E97B4-0F8F-4ABF-87CC-D943994FC438}" Directory_="zhhans_1_Dir" Attributes="0" KeyPath="strings.psd1_48" Type="0"/>
+    <ROW Component="strings.psd1_49" ComponentId="{457F51FF-2017-461F-A3BE-C13245258245}" Directory_="zhhant_1_Dir" Attributes="0" KeyPath="strings.psd1_49" Type="0"/>
+    <ROW Component="strings.psd1_5" ComponentId="{F073F237-339F-4E77-A1B7-C33E87D876DE}" Directory_="es_Dir" Attributes="0" KeyPath="strings.psd1_5" Type="0"/>
+    <ROW Component="strings.psd1_6" ComponentId="{42A86381-5811-4843-9B12-C6EE1F285815}" Directory_="fi_Dir" Attributes="0" KeyPath="strings.psd1_6" Type="0"/>
+    <ROW Component="strings.psd1_7" ComponentId="{BCE81A0A-5CFB-4A31-9B04-EDD8EEFB27C6}" Directory_="fr_Dir" Attributes="0" KeyPath="strings.psd1_7" Type="0"/>
+    <ROW Component="strings.psd1_8" ComponentId="{5A03663D-3796-4EEE-8A04-5C9CF989C878}" Directory_="he_Dir" Attributes="0" KeyPath="strings.psd1_8" Type="0"/>
+    <ROW Component="strings.psd1_9" ComponentId="{2720AC78-FFB7-4535-932F-AA1DCAC49000}" Directory_="hu_Dir" Attributes="0" KeyPath="strings.psd1_9" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -75,33 +214,111 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="SetupPackager.exe" Component_="SetupPackager.exe" FileName="SETUPP~1.EXE|SetupPackager.exe" Attributes="0" SourcePath="..\SetupPackager.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="Msi.ps1" Component_="Msi.ps1" FileName="Msi.ps1" Attributes="0" SourcePath="..\Scripts\Msi.ps1" SelfReg="false"/>
     <ROW File="Icon.ico" Component_="Icon.ico" FileName="Icon.ico" Attributes="0" SourcePath="..\Ressources\Icon.ico" SelfReg="false"/>
-    <ROW File="Intune.bat" Component_="Msi.ps1" FileName="Intune.bat" Attributes="0" SourcePath="..\Scripts\Intune.bat" SelfReg="false"/>
-    <ROW File="Intune.ps1" Component_="Msi.ps1" FileName="Intune.ps1" Attributes="0" SourcePath="..\Scripts\Intune.ps1" SelfReg="false"/>
     <ROW File="WindowsVersions.txt" Component_="Msi.ps1" FileName="WINDOW~1.TXT|WindowsVersions.txt" Attributes="0" SourcePath="..\Scripts\WindowsVersions.txt" SelfReg="false"/>
-    <ROW File="PEiD.exe" Component_="PEiD.exe" FileName="PEiD.exe" Attributes="0" SourcePath="..\ThirdParty\PEiD\PEiD.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="PEiD.txt" Component_="PEiD.txt" FileName="PEiD.txt" Attributes="0" SourcePath="..\ThirdParty\PEiD\PEiD.txt" SelfReg="false"/>
-    <ROW File="AppDeployToolkitBanner.png" Component_="AppDeployToolkitBanner.png" FileName="APPDEP~1.PNG|AppDeployToolkitBanner.png" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\AppDeployToolkit\AppDeployToolkitBanner.png" SelfReg="false"/>
-    <ROW File="AppDeployToolkitConfig.xml" Component_="AppDeployToolkitBanner.png" FileName="APPDEP~1.XML|AppDeployToolkitConfig.xml" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\AppDeployToolkit\AppDeployToolkitConfig.xml" SelfReg="false"/>
-    <ROW File="AppDeployToolkitExtensions.ps1" Component_="AppDeployToolkitBanner.png" FileName="APPDEP~1.PS1|AppDeployToolkitExtensions.ps1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\AppDeployToolkit\AppDeployToolkitExtensions.ps1" SelfReg="false"/>
-    <ROW File="AppDeployToolkitHelp.ps1" Component_="AppDeployToolkitBanner.png" FileName="APPDEP~2.PS1|AppDeployToolkitHelp.ps1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\AppDeployToolkit\AppDeployToolkitHelp.ps1" SelfReg="false"/>
-    <ROW File="AppDeployToolkitLogo.ico" Component_="AppDeployToolkitBanner.png" FileName="APPDEP~1.ICO|AppDeployToolkitLogo.ico" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\AppDeployToolkit\AppDeployToolkitLogo.ico" SelfReg="false"/>
-    <ROW File="AppDeployToolkitLogo.png" Component_="AppDeployToolkitBanner.png" FileName="APPDEP~2.PNG|AppDeployToolkitLogo.png" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\AppDeployToolkit\AppDeployToolkitLogo.png" SelfReg="false"/>
-    <ROW File="AppDeployToolkitMain.cs" Component_="AppDeployToolkitBanner.png" FileName="APPDEP~1.CS|AppDeployToolkitMain.cs" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\AppDeployToolkit\AppDeployToolkitMain.cs" SelfReg="false"/>
-    <ROW File="AppDeployToolkitMain.ps1" Component_="AppDeployToolkitBanner.png" FileName="APPDEP~3.PS1|AppDeployToolkitMain.ps1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\AppDeployToolkit\AppDeployToolkitMain.ps1" SelfReg="false"/>
-    <ROW File="DeployApplication.exe" Component_="DeployApplication.exe" FileName="DEPLOY~1.EXE|Deploy-Application.exe" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Deploy-Application.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="DeployApplication.exe.config" Component_="DeployApplication.exe.config" FileName="DEPLOY~1.CON|Deploy-Application.exe.config" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Deploy-Application.exe.config" SelfReg="false"/>
-    <ROW File="DeployApplication.ps1" Component_="DeployApplication.exe.config" FileName="DEPLOY~1.PS1|Deploy-Application.ps1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Deploy-Application.ps1" SelfReg="false"/>
-    <ROW File="Batch.ps1" Component_="Custom.ps1" FileName="Batch.ps1" Attributes="0" SourcePath="..\Templates\PSAppDeployToolkit\Batch.ps1" SelfReg="false"/>
     <ROW File="EXE.ps1" Component_="Custom.ps1" FileName="EXE.ps1" Attributes="0" SourcePath="..\Templates\PSAppDeployToolkit\EXE.ps1" SelfReg="false"/>
     <ROW File="MSI.ps1_2" Component_="Custom.ps1" FileName="MSI.ps1" Attributes="0" SourcePath="..\Templates\PSAppDeployToolkit\MSI.ps1" SelfReg="false"/>
-    <ROW File="PowerShell.ps1" Component_="Custom.ps1" FileName="POWERS~1.PS1|PowerShell.ps1" Attributes="0" SourcePath="..\Templates\PSAppDeployToolkit\PowerShell.ps1" SelfReg="false"/>
     <ROW File="PSADT.setuppackager" Component_="PSADT.setuppackager" FileName="PSADT~1.SET|PSADT.setuppackager" Attributes="0" SourcePath="..\Examples\PSADT.setuppackager" SelfReg="false"/>
-    <ROW File="extensions.json" Component_="extensions.json" FileName="EXTENS~1.JSO|extensions.json" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\.vscode\extensions.json" SelfReg="false"/>
-    <ROW File="PSScriptAnalyzerSettings.psd1" Component_="extensions.json" FileName="PSSCRI~1.PSD|PSScriptAnalyzerSettings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\.vscode\PSScriptAnalyzerSettings.psd1" SelfReg="false"/>
-    <ROW File="settings.json" Component_="extensions.json" FileName="SETTIN~1.JSO|settings.json" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\.vscode\settings.json" SelfReg="false"/>
-    <ROW File="RunHidden.vbs" Component_="AppDeployToolkitBanner.png" FileName="RUNHID~1.VBS|RunHidden.vbs" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\AppDeployToolkit\RunHidden.vbs" SelfReg="false"/>
+    <ROW File="ReadMsi.ps1" Component_="Msi.ps1" FileName="Read-Msi.ps1" Attributes="0" SourcePath="..\Scripts\Read-Msi.ps1" SelfReg="false"/>
+    <ROW File="UploadIntune.bat" Component_="Msi.ps1" FileName="UPLOAD~1.BAT|Upload-Intune.bat" Attributes="0" SourcePath="..\Scripts\Upload-Intune.bat" SelfReg="false"/>
+    <ROW File="UploadIntune.ps1" Component_="Msi.ps1" FileName="UPLOAD~1.PS1|Upload-Intune.ps1" Attributes="0" SourcePath="..\Scripts\Upload-Intune.ps1" SelfReg="false"/>
+    <ROW File="PEiD.exe" Component_="PEiD.exe" FileName="PEiD.exe" Attributes="0" SourcePath="..\ThirdParty\PEiD\PEiD.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="PEiD.txt" Component_="PEiD.txt" FileName="PEiD.txt" Attributes="0" SourcePath="..\ThirdParty\PEiD\PEiD.txt" SelfReg="false"/>
+    <ROW File="AppIcon.png" Component_="AppIcon.png" FileName="AppIcon.png" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Assets\AppIcon.png" SelfReg="false"/>
+    <ROW File="Banner.Classic.png" Component_="AppIcon.png" FileName="BANNER~1.PNG|Banner.Classic.png" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Assets\Banner.Classic.png" SelfReg="false"/>
+    <ROW File="config.psd1" Component_="config.psd1" FileName="CONFIG~1.PSD|config.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Config\config.psd1" SelfReg="false"/>
+    <ROW File="COPYING.Lesser" Component_="COPYING.Lesser" FileName="COPYIN~1.LES|COPYING.Lesser" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\COPYING.Lesser" SelfReg="false"/>
+    <ROW File="AddSetupFilesHere.txt" Component_="AddSetupFilesHere.txt" FileName="ADDSET~1.TXT|Add Setup Files Here.txt" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Files\Add Setup Files Here.txt" SelfReg="false"/>
+    <ROW File="InvokeAppDeployToolkit.exe" Component_="InvokeAppDeployToolkit.exe" FileName="INVOKE~1.EXE|Invoke-AppDeployToolkit.exe" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Invoke-AppDeployToolkit.exe" SelfReg="false"/>
+    <ROW File="InvokeAppDeployToolkit.ps1" Component_="COPYING.Lesser" FileName="INVOKE~1.PS1|Invoke-AppDeployToolkit.ps1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Invoke-AppDeployToolkit.ps1" SelfReg="false"/>
+    <ROW File="AppIcon.png_1" Component_="AppIcon.png_1" FileName="AppIcon.png" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Assets\AppIcon.png" SelfReg="false"/>
+    <ROW File="Banner.Classic.png_1" Component_="AppIcon.png_1" FileName="BANNER~1.PNG|Banner.Classic.png" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Assets\Banner.Classic.png" SelfReg="false"/>
+    <ROW File="Eula.txt" Component_="Eula.txt" FileName="Eula.txt" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\bin\AMD64\handle\Eula.txt" SelfReg="false"/>
+    <ROW File="handle.exe" Component_="handle.exe" FileName="handle.exe" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\bin\AMD64\handle\handle.exe" SelfReg="false"/>
+    <ROW File="Eula.txt_1" Component_="Eula.txt_1" FileName="Eula.txt" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\bin\ARM64\handle\Eula.txt" SelfReg="false"/>
+    <ROW File="handle.exe_1" Component_="handle.exe_1" FileName="handle.exe" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\bin\ARM64\handle\handle.exe" SelfReg="false"/>
+    <ROW File="Eula.txt_2" Component_="Eula.txt_2" FileName="Eula.txt" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\bin\i386\handle\Eula.txt" SelfReg="false"/>
+    <ROW File="handle.exe_2" Component_="handle.exe_2" FileName="handle.exe" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\bin\i386\handle\handle.exe" SelfReg="false"/>
+    <ROW File="config.psd1_1" Component_="config.psd1_1" FileName="CONFIG~1.PSD|config.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Config\config.psd1" SelfReg="false"/>
+    <ROW File="COPYING.Lesser_1" Component_="COPYING.Lesser_1" FileName="COPYIN~1.LES|COPYING.Lesser" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\COPYING.Lesser" SelfReg="false"/>
+    <ROW File="AppDeployToolkitExtensions.ps1" Component_="AppDeployToolkitExtensions.ps1" FileName="APPDEP~1.PS1|AppDeployToolkitExtensions.ps1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v3\AppDeployToolkit\AppDeployToolkitExtensions.ps1" SelfReg="false"/>
+    <ROW File="AppDeployToolkitMain.ps1" Component_="AppDeployToolkitExtensions.ps1" FileName="APPDEP~2.PS1|AppDeployToolkitMain.ps1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v3\AppDeployToolkit\AppDeployToolkitMain.ps1" SelfReg="false"/>
+    <ROW File="COPYING.Lesser_2" Component_="AppDeployToolkitExtensions.ps1" FileName="COPYIN~1.LES|COPYING.Lesser" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v3\AppDeployToolkit\COPYING.Lesser" SelfReg="false"/>
+    <ROW File="COPYING.Lesser_3" Component_="COPYING.Lesser_2" FileName="COPYIN~1.LES|COPYING.Lesser" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v3\COPYING.Lesser" SelfReg="false"/>
+    <ROW File="DeployApplication.exe" Component_="DeployApplication.exe" FileName="DEPLOY~1.EXE|Deploy-Application.exe" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v3\Deploy-Application.exe" SelfReg="false"/>
+    <ROW File="COPYING.Lesser_4" Component_="COPYING.Lesser_3" FileName="COPYIN~1.LES|COPYING.Lesser" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v4\COPYING.Lesser" SelfReg="false"/>
+    <ROW File="InvokeAppDeployToolkit.exe_1" Component_="InvokeAppDeployToolkit.exe_1" FileName="INVOKE~1.EXE|Invoke-AppDeployToolkit.exe" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v4\Invoke-AppDeployToolkit.exe" SelfReg="false"/>
+    <ROW File="InvokeAppDeployToolkit.ps1_1" Component_="COPYING.Lesser_3" FileName="INVOKE~1.PS1|Invoke-AppDeployToolkit.ps1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v4\Invoke-AppDeployToolkit.ps1" SelfReg="false"/>
+    <ROW File="COPYING.Lesser_5" Component_="COPYING.Lesser_4" FileName="COPYIN~1.LES|COPYING.Lesser" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v4\PSAppDeployToolkit.Extensions\COPYING.Lesser" SelfReg="false"/>
+    <ROW File="PSAppDeployToolkit.Extensions.psd1" Component_="COPYING.Lesser_4" FileName="PSAPPD~1.PSD|PSAppDeployToolkit.Extensions.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v4\PSAppDeployToolkit.Extensions\PSAppDeployToolkit.Extensions.psd1" SelfReg="false"/>
+    <ROW File="PSAppDeployToolkit.Extensions.psm1" Component_="COPYING.Lesser_4" FileName="PSAPPD~1.PSM|PSAppDeployToolkit.Extensions.psm1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Frontend\v4\PSAppDeployToolkit.Extensions\PSAppDeployToolkit.Extensions.psm1" SelfReg="false"/>
+    <ROW File="PSADT.dll" Component_="PSADT.dll" FileName="PSADT.dll" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\lib\PSADT.dll" SelfReg="false"/>
+    <ROW File="PSADT.UserInterface.dll" Component_="PSADT.UserInterface.dll" FileName="PSADTU~1.DLL|PSADT.UserInterface.dll" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\lib\PSADT.UserInterface.dll" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~1.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\lib\System.ValueTuple.dll" SelfReg="false"/>
+    <ROW File="Wpf.Ui.Abstractions.dll" Component_="Wpf.Ui.Abstractions.dll" FileName="WPFUIA~1.DLL|Wpf.Ui.Abstractions.dll" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\lib\Wpf.Ui.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Wpf.Ui.Abstractions.xml" Component_="Wpf.Ui.Abstractions.xml" FileName="WPFUIA~1.XML|Wpf.Ui.Abstractions.xml" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\lib\Wpf.Ui.Abstractions.xml" SelfReg="false"/>
+    <ROW File="Wpf.Ui.dll" Component_="Wpf.Ui.dll" FileName="WPFUI~1.DLL|Wpf.Ui.dll" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\lib\Wpf.Ui.dll" SelfReg="false"/>
+    <ROW File="Wpf.Ui.Tray.dll" Component_="Wpf.Ui.Tray.dll" FileName="WPFUIT~1.DLL|Wpf.Ui.Tray.dll" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\lib\Wpf.Ui.Tray.dll" SelfReg="false"/>
+    <ROW File="Wpf.Ui.Tray.xml" Component_="Wpf.Ui.Abstractions.xml" FileName="WPFUIT~1.XML|Wpf.Ui.Tray.xml" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\lib\Wpf.Ui.Tray.xml" SelfReg="false"/>
+    <ROW File="Wpf.Ui.xml" Component_="Wpf.Ui.Abstractions.xml" FileName="WPFUI~1.XML|Wpf.Ui.xml" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\lib\Wpf.Ui.xml" SelfReg="false"/>
+    <ROW File="PSAppDeployToolkit.cer" Component_="COPYING.Lesser_1" FileName="PSAPPD~1.CER|PSAppDeployToolkit.cer" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\PSAppDeployToolkit.cer" SelfReg="false"/>
+    <ROW File="PSAppDeployToolkit.psd1" Component_="COPYING.Lesser_1" FileName="PSAPPD~1.PSD|PSAppDeployToolkit.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\PSAppDeployToolkit.psd1" SelfReg="false"/>
+    <ROW File="PSAppDeployToolkit.psm1" Component_="COPYING.Lesser_1" FileName="PSAPPD~1.PSM|PSAppDeployToolkit.psm1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\PSAppDeployToolkit.psm1" SelfReg="false"/>
+    <ROW File="strings.psd1" Component_="strings.psd1" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\ar\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_1" Component_="strings.psd1_1" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\cz\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_2" Component_="strings.psd1_2" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\da\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_3" Component_="strings.psd1_3" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\de\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_4" Component_="strings.psd1_4" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\el\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_5" Component_="strings.psd1_5" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\es\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_6" Component_="strings.psd1_6" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\fi\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_7" Component_="strings.psd1_7" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\fr\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_8" Component_="strings.psd1_8" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\he\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_9" Component_="strings.psd1_9" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\hu\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_10" Component_="strings.psd1_10" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\it\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_11" Component_="strings.psd1_11" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\ja\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_12" Component_="strings.psd1_12" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\ko\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_13" Component_="strings.psd1_13" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\nb\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_14" Component_="strings.psd1_14" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\nl\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_15" Component_="strings.psd1_15" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\pl\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_16" Component_="strings.psd1_16" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\pt\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_17" Component_="strings.psd1_17" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\pt-br\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_18" Component_="strings.psd1_18" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\ru\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_19" Component_="strings.psd1_19" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\sk\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_20" Component_="strings.psd1_20" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_21" Component_="strings.psd1_21" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\sv\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_22" Component_="strings.psd1_22" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\tr\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_23" Component_="strings.psd1_23" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\zh-hans\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_24" Component_="strings.psd1_24" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Strings\zh-hant\strings.psd1" SelfReg="false"/>
+    <ROW File="NewADTFunction.ps1" Component_="NewADTFunction.ps1" FileName="NEW-AD~1.PS1|New-ADTFunction.ps1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit\Templates\New-ADTFunction.ps1" SelfReg="false"/>
+    <ROW File="COPYING.Lesser_6" Component_="COPYING.Lesser_5" FileName="COPYIN~1.LES|COPYING.Lesser" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit.Extensions\COPYING.Lesser" SelfReg="false"/>
+    <ROW File="PSAppDeployToolkit.Extensions.psd1_1" Component_="COPYING.Lesser_5" FileName="PSAPPD~1.PSD|PSAppDeployToolkit.Extensions.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit.Extensions\PSAppDeployToolkit.Extensions.psd1" SelfReg="false"/>
+    <ROW File="PSAppDeployToolkit.Extensions.psm1_1" Component_="COPYING.Lesser_5" FileName="PSAPPD~1.PSM|PSAppDeployToolkit.Extensions.psm1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\PSAppDeployToolkit.Extensions\PSAppDeployToolkit.Extensions.psm1" SelfReg="false"/>
+    <ROW File="strings.psd1_25" Component_="strings.psd1_25" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\ar\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_26" Component_="strings.psd1_26" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\cz\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_27" Component_="strings.psd1_27" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\da\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_28" Component_="strings.psd1_28" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\de\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_29" Component_="strings.psd1_29" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\el\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_30" Component_="strings.psd1_30" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\es\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_31" Component_="strings.psd1_31" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\fi\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_32" Component_="strings.psd1_32" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\fr\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_33" Component_="strings.psd1_33" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\he\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_34" Component_="strings.psd1_34" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\hu\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_35" Component_="strings.psd1_35" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\it\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_36" Component_="strings.psd1_36" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\ja\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_37" Component_="strings.psd1_37" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\ko\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_38" Component_="strings.psd1_38" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\nb\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_39" Component_="strings.psd1_39" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\nl\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_40" Component_="strings.psd1_40" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\pl\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_41" Component_="strings.psd1_41" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\pt\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_42" Component_="strings.psd1_42" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\pt-br\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_43" Component_="strings.psd1_43" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\ru\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_44" Component_="strings.psd1_44" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\sk\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_45" Component_="strings.psd1_45" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_46" Component_="strings.psd1_46" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\sv\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_47" Component_="strings.psd1_47" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\tr\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_48" Component_="strings.psd1_48" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\zh-hans\strings.psd1" SelfReg="false"/>
+    <ROW File="strings.psd1_49" Component_="strings.psd1_49" FileName="STRING~1.PSD|strings.psd1" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\Strings\zh-hant\strings.psd1" SelfReg="false"/>
+    <ROW File="AddSupportingFilesHere.txt" Component_="AddSupportingFilesHere.txt" FileName="ADDSUP~1.TXT|Add Supporting Files Here.txt" Attributes="0" SourcePath="..\ThirdParty\PSAppDeployToolkit\SupportFiles\Add Supporting Files Here.txt" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -169,8 +386,6 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
-    <ROW Directory_="Files_Dir" Component_="Files" ManualDelete="false"/>
-    <ROW Directory_="SupportFiles_Dir" Component_="SupportFiles" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
@@ -209,14 +424,88 @@
     <ROW Feature_="MainFeature" Component_="Msi.ps1"/>
     <ROW Feature_="MainFeature" Component_="PEiD.exe"/>
     <ROW Feature_="MainFeature" Component_="PEiD.txt"/>
-    <ROW Feature_="MainFeature" Component_="AppDeployToolkitBanner.png"/>
-    <ROW Feature_="MainFeature" Component_="DeployApplication.exe"/>
-    <ROW Feature_="MainFeature" Component_="DeployApplication.exe.config"/>
-    <ROW Feature_="MainFeature" Component_="Files"/>
+    <ROW Feature_="MainFeature" Component_="AppIcon.png"/>
     <ROW Feature_="MainFeature" Component_="Custom.ps1"/>
-    <ROW Feature_="MainFeature" Component_="SupportFiles"/>
+    <ROW Feature_="MainFeature" Component_="config.psd1"/>
     <ROW Feature_="MainFeature" Component_="PSADT.setuppackager"/>
-    <ROW Feature_="MainFeature" Component_="extensions.json"/>
+    <ROW Feature_="MainFeature" Component_="COPYING.Lesser"/>
+    <ROW Feature_="MainFeature" Component_="AddSetupFilesHere.txt"/>
+    <ROW Feature_="MainFeature" Component_="InvokeAppDeployToolkit.exe"/>
+    <ROW Feature_="MainFeature" Component_="AppIcon.png_1"/>
+    <ROW Feature_="MainFeature" Component_="Eula.txt"/>
+    <ROW Feature_="MainFeature" Component_="handle.exe"/>
+    <ROW Feature_="MainFeature" Component_="Eula.txt_1"/>
+    <ROW Feature_="MainFeature" Component_="handle.exe_1"/>
+    <ROW Feature_="MainFeature" Component_="Eula.txt_2"/>
+    <ROW Feature_="MainFeature" Component_="handle.exe_2"/>
+    <ROW Feature_="MainFeature" Component_="config.psd1_1"/>
+    <ROW Feature_="MainFeature" Component_="COPYING.Lesser_1"/>
+    <ROW Feature_="MainFeature" Component_="AppDeployToolkitExtensions.ps1"/>
+    <ROW Feature_="MainFeature" Component_="COPYING.Lesser_2"/>
+    <ROW Feature_="MainFeature" Component_="DeployApplication.exe"/>
+    <ROW Feature_="MainFeature" Component_="COPYING.Lesser_3"/>
+    <ROW Feature_="MainFeature" Component_="InvokeAppDeployToolkit.exe_1"/>
+    <ROW Feature_="MainFeature" Component_="COPYING.Lesser_4"/>
+    <ROW Feature_="MainFeature" Component_="PSADT.dll"/>
+    <ROW Feature_="MainFeature" Component_="PSADT.UserInterface.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ValueTuple.dll"/>
+    <ROW Feature_="MainFeature" Component_="Wpf.Ui.Abstractions.dll"/>
+    <ROW Feature_="MainFeature" Component_="Wpf.Ui.Abstractions.xml"/>
+    <ROW Feature_="MainFeature" Component_="Wpf.Ui.dll"/>
+    <ROW Feature_="MainFeature" Component_="Wpf.Ui.Tray.dll"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_1"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_2"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_3"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_4"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_5"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_6"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_7"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_8"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_9"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_10"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_11"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_12"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_13"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_14"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_15"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_16"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_17"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_18"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_19"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_20"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_21"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_22"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_23"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_24"/>
+    <ROW Feature_="MainFeature" Component_="NewADTFunction.ps1"/>
+    <ROW Feature_="MainFeature" Component_="COPYING.Lesser_5"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_25"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_26"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_27"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_28"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_29"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_30"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_31"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_32"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_33"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_34"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_35"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_36"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_37"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_38"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_39"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_40"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_41"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_42"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_43"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_44"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_45"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_46"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_47"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_48"/>
+    <ROW Feature_="MainFeature" Component_="strings.psd1_49"/>
+    <ROW Feature_="MainFeature" Component_="AddSupportingFilesHere.txt"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Icon.exe" SourcePath="..\Ressources\Icon.ico" Index="0"/>

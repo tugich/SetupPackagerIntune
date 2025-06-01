@@ -1,7 +1,11 @@
+Version 1.6.0:
+* Renamed PowerShell scripts in .\Scripts folder
+* Updated PSAppDeployToolkit (PSADT) to v4.0.6
+* Updated PSADT templates to v4.0.6
+* Updated PSAppDeployToolkit templates to v4.0.6 - Added Registry key for app detection in Intune
+
 Version 1.5.3:
-* Open source the project for the community
-* Batch and PowerShell scripts renamed for new naming convention
-* Added [Enter] shortcut to search for installed applications
+* Added keyboard shortcut [Enter] for searching installed apps
 
 Version 1.5.2:
 * Added search window for installed Windows apps

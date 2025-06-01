@@ -18,6 +18,9 @@ CompilerEndIf
 
 ;- Variables
 
+;-- Configuration
+Global ConfigurationFile.s = "SetupPackager.config"
+
 ;-- Window
 Global Event = #Null, Quit = #False
 Global Image_DropFolder, Combo_InstallerFile, Image_GreenCheck, 
@@ -118,7 +121,7 @@ Procedure PSADT_ReadInformations(EventType)
   ;Debug DropFolderPath
   
   Protected FileIn, FileOut, sLine.s
-  FileIn = ReadFile(#PB_Any, DropFolderPath + "\Deploy-Application.ps1", #PB_File_SharedRead)
+  FileIn = ReadFile(#PB_Any, DropFolderPath + "\Invoke-AppDeployToolkit.ps1", #PB_File_SharedRead)
   
   If FileIn
     ; Read each line from the input file, replace text, and write to the output file
@@ -126,27 +129,27 @@ Procedure PSADT_ReadInformations(EventType)
       sLine = ReadString(FileIn)
       sLine = LTrim(sLine)
 
-      If FindString(sLine, "[String]$appVendor")
-        sLine = RemoveString(sLine, "[String]$appVendor =")
-        sLine = RemoveString(sLine, "[String]$appVendor=")
+      If FindString(sLine, "AppVendor =")
+        sLine = RemoveString(sLine, "AppVendor =")
+        sLine = RemoveString(sLine, "AppVendor=")
         sLine = LTrim(sLine)
         sLine = LTrim(sLine, "'")
         sLine = RTrim(sLine, "'")
         SetGadgetText(PD_String_Publisher, sLine)
       EndIf
       
-      If FindString(sLine, "[String]$appName")
-        sLine = RemoveString(sLine, "[String]$appName =")
-        sLine = RemoveString(sLine, "[String]$appName=")
+      If FindString(sLine, "AppName =")
+        sLine = RemoveString(sLine, "AppName =")
+        sLine = RemoveString(sLine, "AppName=")
         sLine = LTrim(sLine)
         sLine = LTrim(sLine, "'")
         sLine = RTrim(sLine, "'")
         SetGadgetText(PD_String_ProductName, sLine)
       EndIf
       
-      If FindString(sLine, "[String]$appVersion")
-        sLine = RemoveString(sLine, "[String]$appVersion =")
-        sLine = RemoveString(sLine, "[String]$appVersion=")
+      If FindString(sLine, "AppVersion =")
+        sLine = RemoveString(sLine, "AppVersion =")
+        sLine = RemoveString(sLine, "AppVersion=")
         sLine = LTrim(sLine)
         sLine = LTrim(sLine, "'")
         sLine = RTrim(sLine, "'")
@@ -328,16 +331,8 @@ Procedure Batch_IntuneUpload(EventType)
   Protected Output$ = ""
   Protected Exitcode$ = ""
   Protected PSExitcode.i = 1
-  
+
   Protected IntuneWinFile.s = PackagePath + "\" + GetFilePart(InstallerFile, #PB_FileSystem_NoExtension) + ".intunewin" 
-  Protected TenantDomain.s = InputRequester("Upload to Microsoft Intune", "Please enter your Microsoft Tenant Domain:", "")
-  
-  ; Check Microsoft Tenant Domain
-  If Trim(TenantDomain) = ""
-    MessageRequester("Upload to Intune failed", "Please provide valid tenant domain.", #PB_MessageRequester_Ok | #PB_MessageRequester_Error)
-    ProcedureReturn #False
-  EndIf
-  
   Protected AppName.s = InputRequester("Upload to Microsoft Intune", "Please enter the display name for the app:", "My App 1.0 (x64)")
   
   ; Check App Display Name
@@ -348,9 +343,9 @@ Procedure Batch_IntuneUpload(EventType)
   
   DisableGadget(Button_UploadIntune, #True)
   SetGadgetText(Button_UploadIntune, "Please wait...")
-
-  Compiler = RunProgram("Scripts\UploadTo-Intune.bat", 
-                        TenantDomain + " " + Chr(34) + IntuneWinFile + Chr(34) + " " + Chr(34) + AppName + Chr(34), 
+  
+  Compiler = RunProgram("Scripts\Upload-Intune.bat", 
+                        Chr(34)+IntuneWinFile+Chr(34)+" "+Chr(34)+AppName+Chr(34),
                         "", 
                         #PB_Program_Open | #PB_Program_Read)
   Output$ = ""
@@ -535,9 +530,9 @@ Procedure DropFolder(Folder.s)
   ; Check if PSADT project
   If ExamineDirectory(0, Folder, "*.*")
     While NextDirectoryEntry(0)
-      If DirectoryEntryType(0) = #PB_DirectoryEntry_File And DirectoryEntryName(0) = "Deploy-Application.exe"
+      If DirectoryEntryType(0) = #PB_DirectoryEntry_File And DirectoryEntryName(0) = "Invoke-AppDeployToolkit.exe"
         HideGadget(Button_DebugPSADT, #False)
-        SetGadgetText(Combo_InstallerFile, "Deploy-Application.exe")
+        SetGadgetText(Combo_InstallerFile, "Invoke-AppDeployToolkit.exe")
         MyInstallerFile(#PB_EventType_Change)
         Break
       EndIf
@@ -604,23 +599,24 @@ Procedure OpenSoftwareLogs_Folder(EventType)
 EndProcedure
 
 Procedure PSADT_StartPowerShellEditor(EventType)
-  ShellExecute_(0, "RunAS", "powershell_ise.exe", Chr(34) + DropFolderPath + "\Deploy-Application.ps1" + Chr(34), "", #SW_SHOWNORMAL)
+  ShellExecute_(0, "RunAS", "powershell_ise.exe", Chr(34) + DropFolderPath + "\Invoke-AppDeployToolkit.ps1" + Chr(34), "", #SW_SHOWNORMAL)
 EndProcedure
 
 Procedure PSADT_StartInstallation(EventType)
-  ShellExecute_(0, "RunAS", Chr(34) + DropFolderPath + "\Deploy-Application.exe" + Chr(34), "-DeploymentType 'Install'", "", #SW_SHOWNORMAL)
+  RunProgram(Chr(34)+DropFolderPath+"\Invoke-AppDeployToolkit.exe"+Chr(34), "-DeploymentType Install", DropFolderPath)
 EndProcedure
 
 Procedure PSADT_StartUninstall(EventType)
-  ShellExecute_(0, "RunAS", Chr(34) + DropFolderPath + "\Deploy-Application.exe" + Chr(34), "-DeploymentType 'Uninstall'", "", #SW_SHOWNORMAL)
+  RunProgram(Chr(34)+DropFolderPath+"\Invoke-AppDeployToolkit.exe"+Chr(34), "-DeploymentType Uninstall", DropFolderPath)
+  
 EndProcedure
 
 Procedure PSADT_StartRepair(EventType)
-  ShellExecute_(0, "RunAS", Chr(34) + DropFolderPath + "\Deploy-Application.exe" + Chr(34), "-DeploymentType 'Repair'", "", #SW_SHOWNORMAL)
+  RunProgram(Chr(34)+DropFolderPath+"\Invoke-AppDeployToolkit.exe"+Chr(34), "-DeploymentType Repair", DropFolderPath)
 EndProcedure
 
 Procedure PSADT_StartPowerShell(EventType)
-  ShellExecute_(0, "RunAS", "powershell.exe", "", DropFolderPath, #SW_SHOWNORMAL)
+  ShellExecute_(0, "RunAS", "powershell.exe", "-NoExit -Command " + Chr(34) + "Set-Location '"+DropFolderPath+"'", DropFolderPath, #SW_SHOWNORMAL)
 EndProcedure
 
 Procedure PSADT_StartHelp(EventType)
@@ -727,9 +723,9 @@ Procedure UpdateIntuneCommands()
   EndSelect
   
   ; New: Support for PSAppDeployToolkit
-  If InstallerFile = "Deploy-Application.exe" Or InstallerFile = "Deploy-Application.ps1"
-      Intune_InstallCommand = "Deploy-Application.exe -DeploymentType 'Install' -DeployMode 'Silent'"
-      Intune_UninstallCommand = "Deploy-Application.exe -DeploymentType 'Uninstall' -DeployMode 'Silent'"
+  If InstallerFile = "Invoke-AppDeployToolkit.exe" Or InstallerFile = "Invoke-AppDeployToolkit.ps1"
+      Intune_InstallCommand = "Invoke-AppDeployToolkit.exe -DeploymentType 'Install' -DeployMode 'Silent'"
+      Intune_UninstallCommand = "Invoke-AppDeployToolkit.exe -DeploymentType 'Uninstall' -DeployMode 'Silent'"
       Intune_DetectionCommand = "https://learn.microsoft.com/en-us/mem/intune/apps/apps-win32-add#step-4-detection-rules"
   EndIf
   
@@ -925,14 +921,14 @@ Procedure GeneratePSADTProject(Parameter)
   ; Copy setup files
   SetGadgetText(Text_Introduction, "Copying installation files to destination folder...")
   CopyDirectory(DropFolderPath, PSADT_Path + "Files", "", #PB_FileSystem_Recursive)
-  DeleteFile(PSADT_Path + "Deploy-Application.ps1")
+  DeleteFile(PSADT_Path + "Invoke-AppDeployToolkit.ps1")
   
   ; Copy deployment file
-  ;CopyFile(GetCurrentDirectory() + "Templates\PSAppDeployToolkit\Custom.ps1", PSADT_Path + "Deploy-Application.ps1")
+  ;CopyFile(GetCurrentDirectory() + "Templates\PSAppDeployToolkit\Custom.ps1", PSADT_Path + "Invoke-AppDeployToolkit.ps1")
   
   ; Create empty deployment file
   SetGadgetText(Text_Introduction, "Creating new deployment file...")
-  Protected NewDeploymentFile = CreateFile(#PB_Any, PSADT_Path + "Deploy-Application.ps1") 
+  Protected NewDeploymentFile = CreateFile(#PB_Any, PSADT_Path + "Invoke-AppDeployToolkit.ps1") 
   CloseFile(NewDeploymentFile)
   
   ; Update deployment file by MSI
@@ -956,7 +952,7 @@ Procedure GeneratePSADTProject(Parameter)
   Protected FileIn, FileOut, sLine.s
   FileIn = ReadFile(#PB_Any, GetCurrentDirectory() + "Templates\PSAppDeployToolkit\" + TemplateFile, #PB_File_SharedRead)
   If FileIn
-    FileOut = OpenFile(#PB_Any, PSADT_Path + "Deploy-Application.ps1")
+    FileOut = OpenFile(#PB_Any, PSADT_Path + "Invoke-AppDeployToolkit.ps1")
     If FileOut
       ; Read each line from the input file, replace text, and write to the output file
       While Not Eof(FileIn)
@@ -965,7 +961,7 @@ Procedure GeneratePSADTProject(Parameter)
         sLine = ReplaceString(sLine, "<ProductName>", Details\Name)
         sLine = ReplaceString(sLine, "<ProductVersion>", Details\Version)
         sLine = ReplaceString(sLine, "<ProductCode>", Details\Productcode)
-        sLine = ReplaceString(sLine, "<ScriptDate>", FormatDate("%dd/%mm/%yyyy", Date()))
+        sLine = ReplaceString(sLine, "<ScriptDate>", FormatDate("%yyyy-%mm-%dd", Date()))
         sLine = ReplaceString(sLine, "<ScriptAuthor>", UserName())
         sLine = ReplaceString(sLine, "<InstallerFile>", InstallerFile)
         
@@ -1209,9 +1205,8 @@ Repeat
   
 Until Quit = #True
 
-; IDE Options = PureBasic 6.11 LTS (Windows - x64)
-; CursorPosition = 1192
-; FirstLine = 173
+; IDE Options = PureBasic 6.20 (Windows - x64)
+; CursorPosition = 5
 ; Folding = AAAAAAAAw
 ; EnableXP
 ; DPIAware
